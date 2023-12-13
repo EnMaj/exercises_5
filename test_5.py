@@ -1,2 +1,5 @@
 def mod_number(a,b):
-    print("")
+    if a >= b:
+        return mod_number(a-b,b)
+    else:
+        return a
