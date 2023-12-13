@@ -1,13 +1,12 @@
-def degree5n_2(n,degree,a):
-    if n == a:
-        return degree
-    elif a > n:
-        return -1
-    return degree5n_2(n,degree +1,a*5)
-
 def degree5n(n):
-    degree = 1
-    a=5
-    return degree5n_2(n,degree,a)
+    degree = 0
+    if n%5 ==0:
+        degree+=1
+        n //=5
+        degree += degree5(n)
+    
+    elif degree == 0 and n!=1:
+        return -1
+    return degree
 
 print(degree5n(25))
